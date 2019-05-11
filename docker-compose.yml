@@ -1,0 +1,39 @@
+version: '3.1'
+services:
+  varnish:
+    image: eeacms/varnish
+    volumes:
+      - ./varnish.vcl:/etc/varnish/conf.d/varnish.vcl:ro
+    ports:
+      - "80:6081"
+      - "6085:6085"
+    depends_on:
+      - proxy
+
+  proxy:
+    image: nginx:1.15.12-alpine
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 80
+      
+  rrhh:
+    image: tomcat:9.0.12-jre8
+    volumes:
+      - ./rrhh:/usr/local/tomcat/webapps
+    ports:
+      - 8080
+
+  eadmin:
+    image: tomcat:9.0.12-jre8
+    volumes:
+      - ./eadmin:/usr/local/tomcat/webapps
+    ports:
+      - 8080
+
+  portal:
+    image: tomcat:9.0.12-jre8
+    volumes:
+      - ./portal:/usr/local/tomcat/webapps
+    ports:
+      - 8080

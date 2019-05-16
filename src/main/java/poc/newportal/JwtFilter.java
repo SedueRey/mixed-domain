@@ -40,8 +40,8 @@ public class JwtFilter implements Filter {
             chain.doFilter(request, response);
         } else {
             if(username == null){
-                String authService = "http://localhost/portal/login.jsp";
-                ((HttpServletResponse)response).sendRedirect(authService + "?redirect=http://localhost" + ((HttpServletRequest)request).getRequestURI());
+                String authService = "https://localhost/portal/login.jsp";
+                ((HttpServletResponse)response).sendRedirect(authService + "?redirect=https://localhost" + ((HttpServletRequest)request).getRequestURI());
             } else{
                 request.setAttribute("username", username);
                 chain.doFilter(request, response);

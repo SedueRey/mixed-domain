@@ -1,12 +1,16 @@
 version: '3.1'
 services:
+  cas:
+    build: .
+    ports:
+     - "8443:8443"
+
   varnish:
     image: eeacms/varnish
     volumes:
       - ./varnish.vcl:/etc/varnish/conf.d/varnish.vcl:ro
     ports:
       - "80:6081"
-      - "6085:6085"
     depends_on:
       - proxy
 

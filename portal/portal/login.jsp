@@ -1,7 +1,7 @@
 <%@ page session="true" contentType="text/html; charset=UTF-8" %>
 <%
   String redirect = (String) request.getParameter("redirect");
-  if (redirect == null) redirect = "http://localhost/portal/";
+  if (redirect == null) redirect = "https://localhost/portal/";
   String username = (String) request.getAttribute("username");
   if (request.getMethod().equals("POST") && username != null) {
     response.sendRedirect(redirect);

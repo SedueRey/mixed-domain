@@ -1,6 +1,6 @@
 <%@ page session="true" contentType="text/html; charset=UTF-8" %>
 <%
-  String username = (String) request.getAttribute("username");
+  String username = (String) request.getRemoteUser();
 %>
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">

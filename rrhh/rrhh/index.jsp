@@ -1,6 +1,6 @@
 <%@ page session="true" contentType="text/html; charset=UTF-8" %>
 <%
-  String username = (String) request.getAttribute("username");
+  String username = (String) request.getRemoteUser();
 %>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,73 +1,112 @@
-<%@page contentType="text/html" %>
-<%@page pageEncoding="UTF-8" %>
-<%@ page import="java.util.Map" %>
-<%@ page import="java.util.Iterator" %>
-<%@ page import="java.util.List" %>
-<%@ page import="org.jasig.cas.client.authentication.AttributePrincipal" %>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>CAS Example Java Web App</title>
-</head>
-<body>
-
-<h1>CAS Example Java Web App</h1>
-<p>A sample web application that exercises the CAS protocol features via the Java CAS Client.</p>
-<hr>
-
-<p><b>Authenticated User Id:</b> <a href="logout.jsp" title="Click here to log out"><%= request.getRemoteUser() %>
-</a></p>
-
+<%@ page session="true" contentType="text/html; charset=UTF-8" %>
 <%
-    if (request.getUserPrincipal() != null) {
-        AttributePrincipal principal = (AttributePrincipal) request.getUserPrincipal();
-
-        final Map attributes = principal.getAttributes();
-
-        if (attributes != null) {
-            Iterator attributeNames = attributes.keySet().iterator();
-            out.println("<b>Attributes:</b>");
-
-            if (attributeNames.hasNext()) {
-                out.println("<hr><table border='3pt' width='100%'>");
-                out.println("<th colspan='2'>Attributes</th>");
-                out.println("<tr><td><b>Key</b></td><td><b>Value</b></td></tr>");
-
-                for (; attributeNames.hasNext(); ) {
-                    out.println("<tr><td>");
-                    String attributeName = (String) attributeNames.next();
-                    out.println(attributeName);
-                    out.println("</td><td>");
-                    final Object attributeValue = attributes.get(attributeName);
-
-                    if (attributeValue instanceof List) {
-                        final List values = (List) attributeValue;
-                        out.println("<strong>Multi-valued attribute: " + values.size() + "</strong>");
-                        out.println("<ul>");
-                        for (Object value : values) {
-                            out.println("<li>" + value + "</li>");
-                        }
-                        out.println("</ul>");
-                    } else {
-                        out.println(attributeValue);
-                    }
-                    out.println("</td></tr>");
-                }
-                out.println("</table>");
-            } else {
-                out.print("No attributes are supplied by the CAS server.</p>");
-            }
-        } else {
-            out.println("<pre>The attribute map is empty. Review your CAS filter configurations.</pre>");
-        }
-    } else {
-        out.println("<pre>The user principal is empty from the request object. Review the wrapper filter configuration.</pre>");
-    }
+  String username = (String) request.getRemoteUser();
 %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <esi:include src="/portal/header.jsp"/>
+  <title>Portal de Servicios</title>
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <esi:include src="/portal/side-bar.jsp"/>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <esi:include src="/portal/top-bar.jsp"/>
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Servicios</h1>
+          </div>
+
+          <!-- Content Row -->
+
+          <div class="row">
+
+            <div class="col-xl-4 col-lg-5">
+              <!-- Illustrations -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Recursos Humanos</h6>
+                </div>
+                <div class="card-body">
+                  <div class="text-center">
+                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="">
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id condimentum quam. Pellentesque semper enim sit amet blandit ultricies. Aliquam sit amet ultricies turpis, non lacinia libero.</p>
+                  <a href="/rrhh/">Acceder &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-5">
+              <!-- Illustrations -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">eAdministraci&oacute;n</h6>
+                </div>
+                <div class="card-body">
+                  <div class="text-center">
+                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="">
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id condimentum quam. Pellentesque semper enim sit amet blandit ultricies. Aliquam sit amet ultricies turpis, non lacinia libero.</p>
+                  <a href="/eadmin/">Acceder &rarr;</a>
+                </div>
+              </div>
+            </div>
+  
+              <div class="col-xl-4 col-lg-5">
+                  <!-- Illustrations -->
+                  <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                      <h6 class="m-0 font-weight-bold text-primary">Deportes</h6>
+                    </div>
+                    <div class="card-body">
+                      <div class="text-center">
+                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="">
+                      </div>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id condimentum quam. Pellentesque semper enim sit amet blandit ultricies. Aliquam sit amet ultricies turpis, non lacinia libero.</p>
+                      <a href="#">Acceder &rarr;</a>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <esi:include src="/portal/footer-copy.jsp"/>
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <esi:include src="/portal/footer.jsp"/>
 
 </body>
+
 </html>

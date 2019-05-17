@@ -2,111 +2,67 @@
 <%
   String username = (String) request.getRemoteUser();
 %>
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 
 <head>
-  <esi:include src="/portal/header.jsp"/>
-  <title>Portal de Servicios</title>
+    <title>Portal fundeweb</title>
+    <esi:include src="/public/header.jsp"/>
 </head>
 
-<body id="page-top">
-
-  <!-- Page Wrapper -->
-  <div id="wrapper">
-
-    <esi:include src="/portal/side-bar.jsp"/>
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-      <!-- Main Content -->
-      <div id="content">
-
-        <esi:include src="/portal/top-bar.jsp"/>
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Servicios</h1>
-          </div>
-
-          <!-- Content Row -->
-
-          <div class="row">
-
-            <div class="col-xl-4 col-lg-5">
-              <!-- Illustrations -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Recursos Humanos</h6>
+<body>
+    <esi:include src="/public/menu.jsp"/>
+    <div class="page-wrapper">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo"><img
+                        src="https://portalfundeweb.um.es/portalfundeweb/javax.faces.resource/logo_inst.gif.seam?ln=img"
+                        class="logo"></div>
+                <div class="info">
+                    <h2>Universidad de Murcia</h2>
                 </div>
-                <div class="card-body">
-                  <div class="text-center">
-                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="">
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id condimentum quam. Pellentesque semper enim sit amet blandit ultricies. Aliquam sit amet ultricies turpis, non lacinia libero.</p>
-                  <a href="/rrhh/">Acceder &rarr;</a>
-                </div>
-              </div>
             </div>
-
-            <div class="col-xl-4 col-lg-5">
-              <!-- Illustrations -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">eAdministraci&oacute;n</h6>
-                </div>
-                <div class="card-body">
-                  <div class="text-center">
-                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="">
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id condimentum quam. Pellentesque semper enim sit amet blandit ultricies. Aliquam sit amet ultricies turpis, non lacinia libero.</p>
-                  <a href="/eadmin/">Acceder &rarr;</a>
-                </div>
-              </div>
-            </div>
-  
-              <div class="col-xl-4 col-lg-5">
-                  <!-- Illustrations -->
-                  <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                      <h6 class="m-0 font-weight-bold text-primary">Deportes</h6>
-                    </div>
-                    <div class="card-body">
-                      <div class="text-center">
-                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="">
-                      </div>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id condimentum quam. Pellentesque semper enim sit amet blandit ultricies. Aliquam sit amet ultricies turpis, non lacinia libero.</p>
-                      <a href="#">Acceder &rarr;</a>
-                    </div>
-                  </div>
-              </div>
-            </div>
-
+            <nav class="sidebar-nav">
+                <form id="menuLateralForm" name="menuLateralForm" method="post"
+                    action="/portalfundeweb/paginas/home.seam?cid=25" enctype="application/x-www-form-urlencoded"><input
+                        type="hidden" name="menuLateralForm" value="menuLateralForm">
+                    <ul class="nav-list">
+                        <li id="home"><a id="j_idt38" href="#"
+                                class="ui-commandlink ui-widget bloqueoFundeweb text-nowrap"
+                                onclick="PrimeFaces.addSubmitParam('menuLateralForm',{'j_idt38':'j_idt38'}).submit('menuLateralForm');return false;PrimeFaces.onPost();"><i
+                                    class="fa fa-home"></i> <span>Main menu</span></a></li>
+                        <li id="framework"><a id="j_idt41" href="#"
+                                class="ui-commandlink ui-widget bloqueoFundeweb text-nowrap"
+                                onclick="PrimeFaces.addSubmitParam('menuLateralForm',{'j_idt41':'j_idt41'}).submit('menuLateralForm');return false;PrimeFaces.onPost();"><i
+                                    class="fa fa-cubes"></i> <span>Framework Fundeweb</span></a></li>
+                        <li id="documentacion"><a href="#" class="text-nowrap"><i
+                                    class="fa fa-book fa-flip-horizontal"></i> <span>Documentation</span> <i
+                                    class="fa fa-fw fa-angle-down"></i></a>
+                            <ul class="collapse">
+                                <li id="normativas"><a
+                                        href="https://svn.um.es/svn/MNCS/proyectos/fundeweb/normativa/NORfundeweb.pdf"
+                                        target="_blank">Development regulations</a></li>
+                                <li id="wiki"><a
+                                        href="https://wiki.um.es/wikis/programador/doku.php?id=fdw2.0:fundeweb2.0"
+                                        target="_blank">Wiki Fundeweb2.0</a></li>
+                            </ul>
+                        </li>
+                    </ul><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState"
+                        value="6002598435030240990:-5092815174524985460">
+                </form>
+            </nav>
         </div>
-        <!-- /.container-fluid -->
-
-      </div>
-      <!-- End of Main Content -->
-
-      <esi:include src="/portal/footer-copy.jsp"/>
-
+        <div class="main-content">
+            <div class="page-title">Página de prueba</div>
+            <div class="page-content clearfix">
+                <div class="container-fluid"><img src="./images/1024.png"
+                        style="width: 100%; max-width: 1920px"
+                        srcset="./images/capturas/1024.png 1024w, ./images/capturas/1280.png 1280w, ./images/capturas/1366.png 1366w, ./images/capturas/1440.png 1440w, ./images/capturas/1600.png 1600w, ./images/capturas/1920.png 1920w"
+                        alt="Example"></div>
+            </div>
+        </div>
     </div>
-    <!-- End of Content Wrapper -->
-
-  </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <esi:include src="/portal/footer.jsp"/>
-
+    <esi:include src="/public/footer.jsp"/>
 </body>
 
 </html>

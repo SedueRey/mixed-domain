@@ -35,4 +35,4 @@ services:
       - ./public:/usr/local/tomcat/webapps
       - ./etc/cas/cacerts:/docker-java-home/jre/lib/security/cacerts
     ports:
-      - 8080
+      - 8080:8080

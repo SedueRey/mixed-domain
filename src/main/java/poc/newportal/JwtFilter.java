@@ -12,14 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebFilter(urlPatterns = "/sin-uso")
+@WebFilter(urlPatterns = "/*")
 public class JwtFilter implements Filter {
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        String remoteUser = ((HttpServletRequest)request).getRemoteUser();
-        if (remoteUser!=null) {
-            request.setAttribute("username", remoteUser);
-        }
+        System.out.println(((HttpServletRequest)request).getRequestURI());
         chain.doFilter(request, response);
     }
 

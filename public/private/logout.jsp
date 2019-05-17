@@ -8,6 +8,7 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 
 <%
+    String baseUrl = "http://7bb00b5c.ngrok.io";
     session.invalidate();
-    response.sendRedirect("http://localhost/");
+    response.sendRedirect("https://cas:8443/cas/logout?service="+baseUrl);
 %>

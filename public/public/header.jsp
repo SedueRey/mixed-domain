@@ -16,4 +16,4 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Portal de Servicios de la Universidad de Murcia">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link href="/public/style.0b49d01c3282357a597b.css" rel="stylesheet">
+<link href="/public/css/styles.css" rel="stylesheet">

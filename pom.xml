@@ -51,13 +51,13 @@
         <version>3.1.0</version>
         <executions>
           <execution>
-            <id>copy-resources-portal</id>
+            <id>copy-resources-public1</id>
             <phase>install</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/public/public/WEB-INF/lib/</outputDirectory>
+              <outputDirectory>${basedir}/public/aula/WEB-INF/lib/</outputDirectory>
               <resources>          
                 <resource>
                   <directory>${basedir}/target/</directory>
@@ -70,7 +70,45 @@
             </configuration>            
           </execution>
           <execution>
-            <id>copy-resources-rrhh</id>
+            <id>copy-resources-public2</id>
+            <phase>install</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/public/private/WEB-INF/lib/</outputDirectory>
+              <resources>          
+                <resource>
+                  <directory>${basedir}/target/</directory>
+                  <filtering>false</filtering>
+                  <includes>
+                    <include>*.jar</include>
+                  </includes>
+                </resource>
+              </resources>              
+            </configuration>            
+          </execution>
+          <execution>
+            <id>copy-resources-public3</id>
+            <phase>install</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/public/ROOT/WEB-INF/lib/</outputDirectory>
+              <resources>          
+                <resource>
+                  <directory>${basedir}/target/</directory>
+                  <filtering>false</filtering>
+                  <includes>
+                    <include>*.jar</include>
+                  </includes>
+                </resource>
+              </resources>              
+            </configuration>            
+          </execution>
+          <execution>
+            <id>copy-resources-servicio</id>
             <phase>install</phase>
             <goals>
               <goal>copy-resources</goal>

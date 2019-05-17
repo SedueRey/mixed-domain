@@ -32,7 +32,7 @@
         </init-param>
         <init-param>
             <param-name>serverName</param-name>
-            <param-value>http://7bb00b5c.ngrok.io:80</param-value>
+            <param-value>http://ae78a728.ngrok.io</param-value>
         </init-param>
     </filter>
 
@@ -46,7 +46,7 @@
         </init-param>
         <init-param>
             <param-name>serverName</param-name>
-            <param-value>http://7bb00b5c.ngrok.io:80</param-value>
+            <param-value>http://ae78a728.ngrok.io</param-value>
         </init-param>
         <init-param>
             <param-name>redirectAfterValidation</param-name>

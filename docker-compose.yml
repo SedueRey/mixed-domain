@@ -21,29 +21,26 @@ services:
     ports:
       - 80
       
-  rrhh:
+  servicio:
     image: tomcat:9.0.12-jre8
     volumes:
-      - ./rrhh:/usr/local/tomcat/webapps
+      - ./servicio:/usr/local/tomcat/webapps
+      - ./etc/cas/cacerts:/docker-java-home/jre/lib/security/cacerts
     ports:
       - 8080
 
-  eadmin:
+  public:
     image: tomcat:9.0.12-jre8
     volumes:
-      - ./eadmin:/usr/local/tomcat/webapps
-    ports:
-      - 8080
-
-  portal:
-    image: tomcat:9.0.12-jre8
-    volumes:
-      - ./portal:/usr/local/tomcat/webapps
+      - ./public:/usr/local/tomcat/webapps
+      - ./etc/cas/cacerts:/docker-java-home/jre/lib/security/cacerts
     ports:
       - 8080
 
   liferay:
     image: liferay/portal:7.1.0-ga1-201809012030
+    volumes:
+      - ./etc/cas/cacerts:/usr/lib/jvm/java-1.8-openjdk/jre/lib/security/cacerts
     environment:
       - LIFERAY_WEB_PERIOD_SERVER_PERIOD_PROTOCOL=http
       - LIFERAY_WEB_PERIOD_SERVER_PERIOD_HTTP_PERIOD_PORT=80

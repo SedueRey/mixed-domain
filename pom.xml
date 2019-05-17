@@ -57,7 +57,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/portal/portal/WEB-INF/lib/</outputDirectory>
+              <outputDirectory>${basedir}/public/public/WEB-INF/lib/</outputDirectory>
               <resources>          
                 <resource>
                   <directory>${basedir}/target/</directory>
@@ -76,26 +76,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/rrhh/rrhh/WEB-INF/lib/</outputDirectory>
-              <resources>          
-                <resource>
-                  <directory>${basedir}/target/</directory>
-                  <filtering>false</filtering>
-                  <includes>
-                    <include>*.jar</include>
-                  </includes>
-                </resource>
-              </resources>              
-            </configuration>            
-          </execution>
-          <execution>
-            <id>copy-resources-eadmin</id>
-            <phase>install</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/eadmin/eadmin/WEB-INF/lib/</outputDirectory>
+              <outputDirectory>${basedir}/servicio/servicio/WEB-INF/lib/</outputDirectory>
               <resources>          
                 <resource>
                   <directory>${basedir}/target/</directory>

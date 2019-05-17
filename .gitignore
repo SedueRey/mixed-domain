@@ -3,4 +3,4 @@ target/
 .project
 .DS_Store
 **/*.jar
-*.cert
+.m2/

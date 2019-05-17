@@ -4,7 +4,17 @@ A test of microservices website with varnish and nginx
 
 ## Build the domains
 
-docker run --rm -v ${PWD}:/data -w /data maven:3.5-jdk-8 mvn clean install
+docker run --rm -v ${PWD}:/data -w /data maven:3.5-jdk-8 mvn clean install -Dmaven.repo.local=/data/.m2
+
+## Generate certificates
+
+Use this to build new certificates !!
+
+docker build -f Dockercerts -t certificates .
+docker create -ti --name dummy certificates bash
+docker cp dummy:/etc/cas/cacerts ./etc/cas/.
+docker cp dummy:/etc/cas/thekeystore ./etc/cas/.
+docker rm -fv dummy
 
 ## Run the microservice website
 

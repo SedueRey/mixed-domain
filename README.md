@@ -16,6 +16,10 @@ docker cp dummy:/etc/cas/cacerts ./etc/cas/.
 docker cp dummy:/etc/cas/thekeystore ./etc/cas/.
 docker rm -fv dummy
 
+docker create -ti --name dummy build bash
+docker cp dummy:/tmp/cas-overlay/build/libs/cas.war ./target/.
+docker rm -fv dummy
+
 ## Obtain valid URL for services
 
 Define a /etc/hosts entry for cas
@@ -24,3 +28,6 @@ And use a public valid domain from services
 ## Run the microservice website
 
 docker-compose up -d
+$ docker-compose -f pub-compose.yml up -d
+$ docker-compose -f pub-compose.yml down -v
+

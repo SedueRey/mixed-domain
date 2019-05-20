@@ -8,5 +8,5 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 
 <%
-    response.sendRedirect("http://7bb00b5c.ngrok.io/");
+    response.sendRedirect("http://atica-67-105.atica.um.es/");
 %>

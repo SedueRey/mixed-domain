@@ -1,8 +1,8 @@
-FROM openjdk:11-jre-slim as certs
+FROM openjdk:11-jre-slim
 RUN mkdir /etc/cas \
   && cd /etc/cas \
   && keytool -genkey -noprompt -keystore thekeystore -storepass changeit -keypass changeit -validity 3650 \
-             -keysize 2048 -keyalg RSA -dname "CN=cas, OU=MyOU, O=MyOrg, L=Somewhere, S=VA, C=US" \
+             -keysize 2048 -keyalg RSA -dname "CN=atica-67-105.atica.um.es, OU=MyOU, O=MyOrg, L=Somewhere, S=VA, C=US" \
   && keytool -keystore thekeystore -storepass changeit -noprompt -export -alias mykey -file mykey.cer \
   && keytool -cacerts -storepass changeit -noprompt -trustcacerts -importcert -keypass changeit -alias mykey -file mykey.cer \
   && cp $JAVA_HOME/lib/security/cacerts .

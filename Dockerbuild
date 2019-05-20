@@ -1,0 +1,10 @@
+FROM openjdk:11-jre-slim
+MAINTAINER Chris Peck <crpeck@wm.edu>
+RUN cd /tmp \
+  && apt-get update \
+  && apt-get install -y --no-install-recommends git gradle \
+  && git clone -b master --single-branch https://github.com/apereo/cas-overlay-template.git cas-overlay \
+  && mkdir -p /tmp/cas-overlay/src/main/webapp
+WORKDIR /tmp/cas-overlay
+COPY cas-src/ /tmp/cas-overlay/src
+RUN  ./gradlew clean build

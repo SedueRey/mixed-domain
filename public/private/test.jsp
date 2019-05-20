@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="application/javascript; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-  String urlBase = "http://7bb00b5c.ngrok.io";
-  String urlBaseAula = "http://ae78a728.ngrok.io";
+  String urlBase = "http://atica-67-105.atica.um.es";
+  String urlBaseAula = "http://atica-67-105.atica.um.es:8080";
 %>
 window.umps_data = {
   loaded: '2019-05-09 12:55',

@@ -8,7 +8,7 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 
 <%
-    String baseUrl = "http://7bb00b5c.ngrok.io";
+    String baseUrl = "http://atica-67-105.atica.um.es";
     session.invalidate();
-    response.sendRedirect("https://cas:8443/cas/logout?service="+baseUrl);
+    response.sendRedirect("https://atica-67-105.atica.um.es:8443/cas/logout?service="+baseUrl);
 %>

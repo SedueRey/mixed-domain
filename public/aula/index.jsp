@@ -1,7 +1,7 @@
 <%@ page session="true" contentType="text/html; charset=UTF-8" %>
 <%
     String option = request.getParameter("id");
-    String baseUrl = "http://7bb00b5c.ngrok.io";
+    String baseUrl = "http://atica-67-105.atica.um.es";
 %>
 <!doctype html>
 <html lang="es">

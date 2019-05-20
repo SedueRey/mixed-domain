@@ -64,7 +64,7 @@
             var e = window.umps_data && window.umps_data.tools || [];
             e.length > 0 ? document.getElementById("UMPS_menu_load_holder").innerHTML = e.map(function(e) {
                 return '<a class="UMPS_menu_load_item" href="'.concat(e.url, '">\n          <span class="UMPS_item_icon" style="background-image:').concat("" === e.icon ? "none" : "url('".concat(e.icon, "')"), ';"></span>\n          <span class="UMPS_item_name">').concat(e.name, "</span>\n        </a>")
-            }).join("").concat('<a href="http://7bb00b5c.ngrok.io/login" id="UMPS_menu_load">Más servicios</a>') : document.getElementById("UMPS_menu_load_holder").innerHTML = '<div>\n        <p>No hemos podido acceder a tu cuenta UM en estos momentos</p>\n        <a href="//entrada.um.es" target="blank" id="UMPS_menu_load">Accede a tu cuenta UM</a>\n      </div>'
+            }).join("").concat('<a href="http://atica-67-105.atica.um.es/login" id="UMPS_menu_load">Más servicios</a>') : document.getElementById("UMPS_menu_load_holder").innerHTML = '<div>\n        <p>No hemos podido acceder a tu cuenta UM en estos momentos</p>\n        <a href="//entrada.um.es" target="blank" id="UMPS_menu_load">Accede a tu cuenta UM</a>\n      </div>'
         },
         loadData: function() {
             var e = document.getElementById("UMPS_menu").getAttribute("data-private-url");

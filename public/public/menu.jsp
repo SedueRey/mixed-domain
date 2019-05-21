@@ -8,6 +8,9 @@
     if ("rrhh".equals(menuId)) {
         menuTitle = "Recursos Humanos";
     }
+    if ("portalfundeweb".equals(menuId)) {
+        menuTitle = "Portal Fundeweb";
+    }
 %>
 <header class="topbar">
     <nav class="navbar">

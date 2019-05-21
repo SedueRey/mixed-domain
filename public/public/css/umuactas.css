@@ -1,0 +1,451 @@
+.normal {
+	background-color: white;
+}
+
+.normal.alert-danger {
+	background-color: #f2dede;	
+}
+
+.dr-table.rich-table tr:nth-child(2n) .normal {
+    background-color: #f4f4f4;
+}
+
+.dr-table.rich-table tr:nth-child(2n) .normal.alert-danger {
+    background-color: #f2cece;
+}
+
+.sombreado {
+	background-color: #E3E3EB;
+}
+
+.dr-table.rich-table tr:nth-child(2n) .sombreado {
+	background-color: #d4d4d4;
+}
+
+.condicionada {
+	background-color: #d3eeef;
+}
+
+.diligenciando {
+	background-color: #E5E0F0;
+}
+
+.diligenciandoCC {
+	background-color: #F1E6FF;
+}
+
+.textoCC {
+	background-color: #F9F9FE;	
+	padding: 6px;
+	display: inline-block;
+	margin-top: 16px;
+	border: 1px solid #C0C0C0;
+}
+
+.separada {
+	margin-top : 10px;
+	margin-bottom : 10px;
+}
+
+.separacionIzquierda {
+	margin-left: 20px;
+}
+
+.espaciada {
+	padding-left : 7px;
+	padding-right : 7px;
+}
+
+.post-it {
+	display: block;
+	border:1px solid #e1d4ad;
+	color:#000000;
+    background: #FFFFCC;
+    padding:5px 10px 5px 5px;
+    margin-bottom: 5px;
+}
+
+.error {
+	background: url("../images/warn.gif") no-repeat scroll 5px 5px #FFFFFF;
+	border: 1px solid #BB1111;
+	clear: both;
+	color: #BB1111;
+	display: block;
+	font-size: 1em;
+	margin: 5px 0;
+	padding: 5px 5px 5px 25px;
+	width: 80%;
+}
+
+.error li {
+	list-style:none;
+}
+	
+
+.invalido {
+	background-color:#FF7766;
+}
+
+.valido {
+	background-color: #E5FFEB;
+}
+
+.tachado {
+	text-decoration:line-through;	
+}
+
+.seleccion {
+	color: red;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.valignmiddle {
+	vertical-align: middle !important;
+}
+
+.valigntop {
+	vertical-align:top;
+	border-width: 0px;
+}
+
+.semititle {
+	font-weight: bold;
+    vertical-align: top;
+}
+
+.centro {
+	text-align: center;
+}
+
+.fecha {
+	text-align: center;
+	width: 70px;
+}
+
+
+.el50{
+	width: 50%;
+}
+
+.disabled {
+	cursor:auto;
+} 
+
+.titulacion {
+	background-color: #CFD9F8;
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-image: url("../images/header.png"); 
+    height: 25px;
+}
+
+.gendocdiligencia {
+	margin-left: 10px;
+}
+
+.noborder {
+	border:0px none;
+}
+
+.tooltip {
+    background-color: white;
+    border-width: 1px;
+    padding: 10px;
+}
+.tooltipData {
+    font-weight: bold;
+}
+
+.errorHeader {
+	background: url("../images/warn.gif") no-repeat scroll 5px 5px #FFFFFF;
+	border: 1px solid #BB1111;
+	clear: both;
+	color: #BB1111;
+	display: block;
+	font-size: 1em;
+	margin: 5px 0;
+	padding: 5px 5px 5px 25px;
+	width: 95%;
+}
+
+.ok {
+	background: url("../images/ok.gif") no-repeat scroll 5px 5px #FFFFFF;
+	border: 1px solid MediumSeaGreen;
+	clear: both;
+	color: MediumSeaGreen;
+	display: block;
+	font-size: 1em;
+	margin: 5px 0;
+	padding: 5px 5px 5px 25px;
+	width: 95%;
+}
+
+.info {
+	background-color: #FFFFCC;
+    border: 1px solid #A8192C;
+    clear: both;
+    color: #A8192C;
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 5px 0;
+    padding: 5px 25px;
+}
+
+.linkPortafirmas {
+	border-style: solid;
+    border-width: 1px;
+/*    padding: 1px;*/
+    border-color: darkRed;
+    background-color: #FFECEC;
+}
+
+.linkPortafirmas a {
+	text-decoration: none !important;
+}
+
+.imgCentrada {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.tablaSinAsignar {
+/*	border-style: solid;
+    border-width: 1px;
+    padding: 1px;
+    border-color: Yellow;*/
+    background-color: #FFFFEA;
+    margin-top : 10px;
+	margin-bottom : 10px;
+}
+
+.tablaAsignadas {
+/*	border-style: solid;
+    border-width: 1px;
+    padding: 1px;
+    border-color: #80FF80;*/
+    background-color: #ECFFEC;
+    margin-top : 20px;
+	margin-bottom : 10px;
+}
+
+.firmaLink {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.rechazoSolicitudForm {
+	text-align: center;
+	margin-left: 3%;
+}
+
+.xCentrada {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.post-itB {
+	display: block;
+    background-color: #FFFFCC;    
+    padding: 4px 15px;
+    border-top: 2px solid #CCCCCC;
+    border-right: 2px solid #333333;
+    border-bottom: 2px solid #333333;
+    border-left: 2px solid #CCCCCC;
+}
+
+.post-itB a {
+	text-decoration: none !important;
+	color: #AE1B2E;
+	font-weight: bold;	
+}
+
+.no {
+	display: none;
+}
+
+.nopadding {
+	padding: 0 !important;
+}
+
+.headerColGroup {
+	background-color: #ECF4FE;
+	text-align: center;
+	font-weight: bold;
+}
+
+.lineaInferior {
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.padding td {
+	padding: 4px 6px 8px;
+}
+
+.headerListado {
+	background: none repeat scroll 0 0 #E2E8F6;
+    border: 1px solid #BDC7D8;
+    color: #000;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 10px 5px 5px;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+td .indComment {
+    font-size: 12px;
+    text-align: center;
+    margin-left: 20px;
+}
+
+td a.indice {
+    color: #9BCDEE !important;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 5px 3px 20px;
+    text-align: left !important;
+}
+
+.sbordes {
+	border-style: none;
+}
+
+.solicitudAceptada {
+	background: none repeat scroll 0 0 #F1F1F1;
+	border-style: none;
+}
+
+.post-itC {
+	display: block;
+    background-color: #FFFFCC;    
+    padding: 4px 15px;
+    border-top: 2px solid #CCCCCC;
+    border-right: 2px solid #333333;
+    border-bottom: 2px solid #333333;
+    border-left: 2px solid #CCCCCC;
+}
+
+.post-itC a {
+	text-decoration: none !important;
+	color: #0055BA;
+	font-weight: bold;	
+}
+
+.menuON {
+	font-weight: bold;
+}
+
+
+.menuOFF {
+	
+}
+
+.headerActasTitulaciones {
+	padding: 10px;
+	background: #EAEFFF;
+	border-top: 2px solid #333333;
+	border-right: 50px solid #FFFFFF;
+	border-bottom: 2px solid #333333;
+	border-left: 50px solid #FFFFFF;
+}
+
+.headerBusquedaActas {
+	padding: 10px;
+	background: #EAEFFF;
+	border-top: 1px solid #333333;
+	border-right: 30px solid #FFFFFF;
+	border-bottom: 1px solid #333333;
+	border-left: 30px solid #FFFFFF;
+}
+
+.busqueda {
+	padding-left: 10px;	
+	margin-bottom: 10px;
+}
+
+.lupa {
+	height: 24px;
+	width: 24px;
+}
+
+.query {
+	color: red;
+	font-weight: bold; 		
+}
+
+.intro {
+	font-weight: bold;
+    font-size: medium;
+}
+
+.warningBox {
+	display: block;
+	border:1px solid #e1d4ad;
+	color:#000000;
+    background: #FFFFCC;
+    margin-bottom: 7px;    
+    padding: 4px 15px;
+}
+
+.responsableInfo {
+  display: block;
+  color: #000000;
+  background: #FFEFCF;
+  border: 1px solid #e1d4ad;
+  margin-bottom: 10px; 
+  padding: 4px 10px;
+}
+
+.recientes {
+	margin-top: 50px;
+}
+
+.recientes th {  
+  background-color: #C0C0C0;
+  background-image: url("../images/grading-grey.png");
+  background-position: top left;
+  background-repeat: repeat-x;
+}
+
+.introducirNota {
+	width: 34px;
+}
+
+.noWrap {
+	white-space: nowrap;
+}
+
+input[id*='modificaNota']{
+	margin:0;
+}
+
+.escudo {
+	float: right;
+	padding-left: 12px;
+	max-width: 350px;
+}
+
+.colHeaderLineas {
+	padding-right: 10px;
+}
+
+.mhMovilidad {
+	padding-top: 3px;
+    padding-left: 5px;
+}
+
+.paciencia.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.messagepaciencia {
+    display: none;
+    margin: 2rem 0;
+}

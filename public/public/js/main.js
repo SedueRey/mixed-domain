@@ -53,17 +53,25 @@
             window.umps_widget.menuCreator();
         },
         activeLogout: function() {
-            document.getElementById("logged-in").style.display = '';
-            document.getElementById("logged-out").style.display = 'none';
+            if (null !== document.getElementById("logged-in")) {
+                document.getElementById("logged-in").style.display = '';
+                document.getElementById("logged-out").style.display = 'none';
+            }
         },
         identifyUser: function() {
             var e = window.umps_data && window.umps_data.user || { email: 'annonymous' };
             document.getElementById("username").innerHTML = e.email;
         },
+        notificaciones: function () {
+            var e = window.umps_data && window.umps_data.notificaciones || [];
+            if (e.length > 0 && null !== document.getElementById('UMPS_notificaciones')) {
+
+            }
+        },
         dataManage: function() {
             var e = window.umps_data && window.umps_data.tools || [];
             e.length > 0 ? document.getElementById("UMPS_menu_load_holder").innerHTML = e.map(function(e) {
-                return '<a class="UMPS_menu_load_item" href="'.concat(e.url, '">\n          <span class="UMPS_item_icon" style="background-image:').concat("" === e.icon ? "none" : "url('".concat(e.icon, "')"), ';"></span>\n          <span class="UMPS_item_name">').concat(e.name, "</span>\n        </a>")
+                return '<a class="UMPS_menu_load_item" target="'+e.target+'" href="'.concat(e.url, '">\n          <span class="UMPS_item_icon" style="background-image:').concat("" === e.icon ? "none" : "url('".concat(e.icon, "')"), ';"></span>\n          <span class="UMPS_item_name">').concat(e.name, "</span>\n        </a>")
             }).join("").concat('<a href="http://atica-67-105.atica.um.es/login" id="UMPS_menu_load">Más servicios</a>') : document.getElementById("UMPS_menu_load_holder").innerHTML = '<div>\n        <p>No hemos podido acceder a tu cuenta UM en estos momentos</p>\n        <a href="//entrada.um.es" target="blank" id="UMPS_menu_load">Accede a tu cuenta UM</a>\n      </div>'
         },
         loadData: function() {
@@ -79,7 +87,8 @@
         },
         menuCreator: function() {
             var e = document.getElementById("UMPS_menu");
-            e && (e.innerHTML = '\n        <span id="UMPS_menu_toggler"></span>\n        <nav id="UMPS_menu_dynamic" style="display:none">\n          <span class="UMPS_menu_dynamic_title">Portal de servicios</span>\n          <div id="UMPS_menu_load_holder"></div>\n        </nav>\n        <span id="UMPS_menu_style"></span>\n      ', document.getElementById("UMPS_menu_toggler").addEventListener("click", function(e) {
+            e && (e.innerHTML = '\n        <span id="UMPS_menu_toggler"></span>\n        <nav id="UMPS_menu_dynamic" style="display:none">\n          <span class="UMPS_menu_dynamic_title">Portal de servicios</span>\n          <div id="UMPS_menu_load_holder"></div>\n        </nav>\n        <span id="UMPS_menu_style"></span>\n      ',
+            document.getElementById("UMPS_menu_toggler").addEventListener("click", function(e) {
                 e.target.classList.toggle("umps_menu__active");
                 var t = document.getElementById("UMPS_menu_dynamic"),
                     n = "none" === t.style.display,

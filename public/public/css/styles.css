@@ -1,6 +1,7 @@
 #UMPS_menu.umps_widget {
     position: relative;
-    top: 1px
+    line-height: 1.5;
+    top: 1px;
 }
 
 #UMPS_menu_toggler {
@@ -29,7 +30,10 @@
     padding: 16px;
     position: absolute;
     width: 390px;
-    right: -1em
+    right: -1em;
+    z-index: 1;
+    font-size: 14px;
+    line-height: 1;
 }
 
 #UMPS_menu_dynamic .UMPS_menu_dynamic_title {
@@ -83,7 +87,13 @@
 #UMPS_menu_load_holder:hover>:hover {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
-    opacity: 1
+    opacity: 1;
+    color: #770000;
+}
+
+#UMPS_menu_load_holder:focus-within>:focus .UMPS_item_name,
+#UMPS_menu_load_holder:hover>:hover .UMPS_item_name{
+    color: #770000;
 }
 
 #UMPS_menu_load_holder:focus-within>#UMPS_menu_load:focus,
@@ -113,12 +123,16 @@
 
 .UMPS_menu_load_item {
     display: inline-block;
-    width: calc(50% - 9px);
+    width: calc(33% - 12px);
     border: 1px solid #636467;
     border-radius: 2px;
     margin-bottom: 1em;
+    margin-right: 10px;
     padding: 1em 0;
-    color: #212121
+    color: #212121;
+    vertical-align: top;
+    height: 125px;
+    position: relative;
 }
 
 .UMPS_menu_load_item:hover {
@@ -135,11 +149,11 @@
     border-radius: 0
 }
 
-.UMPS_menu_load_item:nth-child(2n) {
-    margin-left: 14px
+.UMPS_menu_load_item:nth-child(3n) {
+    margin-left: 0
 }
 
-.UMPS_menu_load_item:nth-child(2n):after {
+.UMPS_menu_load_item:nth-child(3n):after {
     content: "";
     display: block;
     width: 100%
@@ -157,4 +171,13 @@
     margin: 0 auto 1em;
     transition: all .5s ease;
     width: 64px
+}
+
+.UMPS_menu_load_item .UMPS_item_name {
+    color: #212121;
+    position: absolute;
+    bottom: 5px;
+    left: 8px;
+    right: 8px;
+    line-height: 1;
 }

@@ -29,7 +29,7 @@
 						<br><img src="https://portafirmas.um.es/portafirmas/img/icono-cargando-rojo.gif" alt="Loading..." class="loading-img"><input id="focoBloqueoFundeweb" type="hidden" name="focoBloqueoFundeweb" value="foco"></div>
 					</div><table border="0" cellpadding="0" cellspacing="0" class="rich-toolbar estiloBarraHerramientasUsuario" id="barraInfoUsuario" width="100%"><tbody><tr valign="middle"><td class="rich-toolbar-item  " style=";"><div id="j_id29"><span class="labelInfoUsuario">Usuario:</span>
                     <span class="textoInfoUsuario" id="username"></span></div></td><td style="width:100%"></td></tr></tbody></table><div id="j_id35"></div>
-                    <div id="UMPS_menu" data-private-url="<%=baseUrl%>/private/test.jsp" class="umps_widget" style="position: absolute;right: 89px;top: 94px;"></div>
+                    <div id="UMPS_menu" data-private-url="<%=baseUrl%>/private/test.jsp?id=portafirmas" class="umps_widget" style="position: absolute;right: 89px;top: 94px;"></div>
                     <div id="scrollMenu" class="scrollMenu">
 
 	<script type="text/javascript">

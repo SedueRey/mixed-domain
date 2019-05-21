@@ -51,6 +51,7 @@
             window.umps_widget.activeLogout();
             window.umps_widget.identifyUser();
             window.umps_widget.menuCreator();
+            window.umps_widget.notificaciones();
         },
         activeLogout: function() {
             if (null !== document.getElementById("logged-in")) {
@@ -63,16 +64,49 @@
             document.getElementById("username").innerHTML = e.email;
         },
         notificaciones: function () {
-            var e = window.umps_data && window.umps_data.notificaciones || [];
-            if (e.length > 0 && null !== document.getElementById('UMPS_notificaciones')) {
-
+            var e = window.umps_data && window.umps_data.notificaciones;
+            if (null !== e && e > 0 && null !== document.getElementById('UMPS_notificaciones')) {
+                document.getElementById('UMPS_notificaciones').innerText = e;
+                document.getElementById('UMPS_notificaciones').style.display = 'block';
+                var x = document.getElementById('UMPS_notificaciones_toggler');
+                x.addEventListener('click', function (evt) {
+                    var nl = document.getElementById('UMPS_notificaciones_list');
+                    if (null === nl) {
+                        var n = document.createElement('div');
+                        n.setAttribute("id", "UMPS_notificaciones_list");
+                        n.setAttribute("style", "display:block");
+                        x.appendChild(n);
+                        nl = document.getElementById('UMPS_notificaciones_list');
+                    } else {
+                        nl.style.display = 'block' === nl.style.display ? 'none' : 'block';
+                    }
+                    var t = '';
+                    if ( 'portal' === window.umps_data.pageid ) {
+                        window.umps_data.tools.forEach(function(tool){
+                            if (tool.notificaciones > 0) {
+                                t+='<p><strong>' + tool.name + '</strong>, ' + tool.notificaciones + ' notificaciones</p>';
+                                for (i = 1; i <= tool.notificaciones; i++) {
+                                    t+='<span style="display:block"><em>Notificación '+i+'</em>: Lorem ipsum dolor sit amet</span>';
+                                }
+                                t+='<hr />'
+                            }
+                        });
+                    } else {
+                        for (i = 1; i <= e; i++) {
+                            t += '<span style="display:block"><strong>Notificación '+i+'</strong>: Lorem ipsum dolor sit amet</span>';
+                        }
+                    }
+                    nl.innerHTML = t;
+                });
             }
         },
         dataManage: function() {
             var e = window.umps_data && window.umps_data.tools || [];
             e.length > 0 ? document.getElementById("UMPS_menu_load_holder").innerHTML = e.map(function(e) {
-                return '<a class="UMPS_menu_load_item" target="'+e.target+'" href="'.concat(e.url, '">\n          <span class="UMPS_item_icon" style="background-image:').concat("" === e.icon ? "none" : "url('".concat(e.icon, "')"), ';"></span>\n          <span class="UMPS_item_name">').concat(e.name, "</span>\n        </a>")
-            }).join("").concat('<a href="http://atica-67-105.atica.um.es/login" id="UMPS_menu_load">Más servicios</a>') : document.getElementById("UMPS_menu_load_holder").innerHTML = '<div>\n        <p>No hemos podido acceder a tu cuenta UM en estos momentos</p>\n        <a href="//entrada.um.es" target="blank" id="UMPS_menu_load">Accede a tu cuenta UM</a>\n      </div>'
+                return '<a class="UMPS_menu_load_item" target="'+
+                    e.target
+                    +'" href="'.concat(e.url, '">\n<span class="UMPS_item_notificaciones UMPS_item_notificaciones_'+e.notificaciones+'">'+e.notificaciones+'</span><span class="UMPS_item_icon" style="background-image:').concat("" === e.icon ? "none" : "url('".concat(e.icon, "')"), ';"></span>\n          <span class="UMPS_item_name">').concat(e.name, "</span>\n        </a>")
+            }).join("").concat('<a href="http://atica-67-105.atica.um.es/login" id="UMPS_menu_load">Más servicios en el Portal</a>') : document.getElementById("UMPS_menu_load_holder").innerHTML = '<div>\n        <p>No hemos podido acceder a tu cuenta UM en estos momentos</p>\n        <a href="//entrada.um.es" target="blank" id="UMPS_menu_load">Accede a tu cuenta UM</a>\n      </div>';
         },
         loadData: function() {
             var e = document.getElementById("UMPS_menu").getAttribute("data-private-url");

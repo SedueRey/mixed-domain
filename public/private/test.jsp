@@ -3,8 +3,23 @@
 <%
   String urlBase = "http://atica-67-105.atica.um.es";
   String urlBaseAula = "http://atica-67-105.atica.um.es:8080";
+  String option = request.getParameter("id");
+  int notificaciones = 0;
+  if ("aula".equals(option)) {
+      notificaciones = 3;
+  }
+  if ("actas".equals(option)) {
+      notificaciones = 2;
+  }
+  if ("portalfundeweb".equals(option)) {
+      notificaciones = 1;
+  }
+  if ("portal".equals(option)) {
+      notificaciones = 6;
+  }
 %>
 window.umps_data = {
+  pageid: '<%= option %>',
   loaded: '2019-05-09 12:55',
   tools: [
     {
@@ -25,12 +40,12 @@ window.umps_data = {
     {
       id: 'aulavirtual',
       name: 'AulaVirtual', icon: '<%=urlBase%>/public/images/icons/av.png', url: '<%=urlBaseAula%>/aula/?id=0', times: 700, target: '_top',
-      notificaciones: 0,
+      notificaciones: 3,
     },
     {
       id: 'actas',
       name: 'Actas', icon: '<%=urlBase%>/public/images/icons/av.png', url: '<%=urlBaseAula%>/aula/?id=1', times: 700, target: '_top',
-      notificaciones: 0,
+      notificaciones: 2,
     },
     {
       id: 'firma-documentos',
@@ -40,7 +55,7 @@ window.umps_data = {
     {
       id: 'fundeweb',
       name: 'Portal Fundeweb', icon: '<%=urlBase%>/public/images/icons/fundeweb.png', url: '<%=urlBase%>/servicio/portalfundeweb/', times: 500, target: '_top',
-      notificaciones: 0,
+      notificaciones: 1,
     },
     {
       id: 'telefonia',
@@ -56,6 +71,6 @@ window.umps_data = {
   user: {
     email: '<%=request.getRemoteUser()%>',
   },
-  other: {},
+  notificaciones: <%= notificaciones %>,
 };
 window.umps_widget.update();

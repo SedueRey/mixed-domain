@@ -97,7 +97,13 @@
                 </li>
             </ul>
         </nav>
-        <div id="UMPS_menu" data-private-url="<%=baseUrl%>/private/test.jsp" class="umps_widget" style="position: absolute;right: 389px;top: 11px;z-index: 10;"></div>
+        <% if ("1".equals(option)) { %>
+        <div id="UMPS_menu" data-private-url="<%=baseUrl%>/private/test.jsp?id=actas" class="umps_widget" style="position: absolute;right: 425px;top: 11px;z-index: 10;"></div>
+        <div class="umps_widget_notificaciones" id="UMPS_notificaciones_toggler" style="position: absolute;right: 389px;top: 11px;z-index: 10;"><span id="UMPS_notificaciones"></span></div>
+        <% } else { %>
+        <div id="UMPS_menu" data-private-url="<%=baseUrl%>/private/test.jsp?id=aula" class="umps_widget" style="position: absolute;right: 425px;top: 11px;z-index: 10;"></div>
+        <div class="umps_widget_notificaciones" id="UMPS_notificaciones_toggler" style="position: absolute;right: 389px;top: 11px;z-index: 10;"><span id="UMPS_notificaciones"></span></div>
+        <% } %>
         <div class="Mrphs-mainHeader is-maximized">
 
             <div class="Mrphs-topHeader">

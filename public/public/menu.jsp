@@ -27,7 +27,10 @@
                 <li class="navbar-item"><a href="#"><i class="fa fa-user-circle navbar-item-icon"></i> <span
                             class="navbar-item-name" id="username"></span></a></li>
                 <li class="navbar-item">
-                    <div id="UMPS_menu" data-private-url="/private/test.jsp" class="umps_widget"></div>
+                    <div class="umps_widget_notificaciones" id="UMPS_notificaciones_toggler"><span id="UMPS_notificaciones"></span></div>
+                </li>
+                <li class="navbar-item">
+                    <div id="UMPS_menu" data-private-url="/private/test.jsp?id=<%= menuId %>" class="umps_widget"></div>
                 </li>
             </ul>
             <ul id="logged-out" class="navbar-actions">

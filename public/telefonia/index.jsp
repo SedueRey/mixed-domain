@@ -265,7 +265,7 @@
                     <li class='menu_right'>
                         <div class='menu_item'>
                             <div class='menu_caption' style="position: relative; top: 3px;">
-                                <div id="UMPS_menu" data-private-url="<%=baseUrl%>/private/test.jsp" class="umps_widget"></div>
+                                <div id="UMPS_menu" data-private-url="<%=baseUrl%>/private/test.jsp?id=telefonia" class="umps_widget"></div>
                             </div>
                         </div>
                     </li>

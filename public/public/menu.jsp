@@ -32,6 +32,9 @@
                 <li class="navbar-item">
                     <div id="UMPS_menu" data-private-url="/private/test.jsp?id=<%= menuId %>" class="umps_widget"></div>
                 </li>
+                <li class="navbar-item">
+                    <input type="text" id="searchapp" name="searchapp" style="display:none;" />
+                </li>
             </ul>
             <ul id="logged-out" class="navbar-actions">
                     <li class="navbar-item"><a
